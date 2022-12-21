@@ -3,6 +3,8 @@ import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
 
+import 'components/text_field_item.dart';
+
 //Chave valida.
 //Acesso interno app e servidor
 //e12b230d
@@ -188,17 +190,17 @@ class _ConversorMoedasHomeState extends State<ConversorMoedasHome> {
                             height: 20,
                           ),
 
-                          buildTextField("Reais", "R\$ ", realController, _realChanged),
+                          TextFieldItem(label: "Reais", prefix: "R\$ ", ctrl: realController, func: _realChanged),
 
                           //Separando os campos com o Widget Divider
                           const Divider(),
-                          buildTextField("Dólares", "U\$\$ ", dolarController, _dolarChanged),
+                          TextFieldItem(label: "Dólares", prefix: "U\$\$ ", ctrl: dolarController, func: _dolarChanged),
 
                           const Divider(),
-                          buildTextField("Euros", "€\$\$ ", euroController, _euroChanged),
+                          TextFieldItem(label: "Euros", prefix: "€\$\$ ", ctrl: euroController, func: _euroChanged),
 
                           const Divider(),
-                          buildTextField("Libras", "£\$\$ ", libraController, _libraChanged),
+                          TextFieldItem(label: "Libras", prefix: "£\$\$ ", ctrl: libraController, func: _libraChanged),
 
                         ], //<Widget>[]
                       ), //Column
@@ -207,29 +209,5 @@ class _ConversorMoedasHomeState extends State<ConversorMoedasHome> {
               }
             }) //FutureBuilder
         ); //Scaffold
-  }
-
-  Widget buildTextField(String label, String prefix, TextEditingController ctrl, Function(String) func) {
-    return TextField(
-      controller: ctrl,
-      decoration: InputDecoration(
-        labelText: label,
-        labelStyle: const TextStyle(color: Colors.amber),
-        border: const OutlineInputBorder(),
-        prefixText: prefix,
-      ), //InputDecoration
-
-      style: const TextStyle(color: Colors.amber, fontSize: 25.0),
-
-      //Passando uma variavel do tipo função para dentro do onChanged
-      //como nossas funçoes de conversão recebe um parametro String na sua declaração
-      //ao declararmos uma variavel do tipo função aqui temos que declarar tambem passando argumento String
-      //ficando assim: Function(String) func, deste modo a declaração é aceita pelo onChanged
-      //Se não fizermos isso a tela não é atualizada ao digitar os valores de conversão sem usar o setState.
-      onChanged: func,
-
-      //para receber somente numeros
-      keyboardType: const TextInputType.numberWithOptions(decimal: true),
-    );
   }
 }
