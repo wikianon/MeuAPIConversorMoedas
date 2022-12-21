@@ -160,13 +160,13 @@ class _ConversorMoedasHomeState extends State<ConversorMoedasHome> {
 
                           //Separando os campos com o Widget Divider
                           const Divider(),
-                          TextFieldItem(label: "Dólares", prefix: "U\$\$ ", controller: dolarController, onChanged: _dolarChanged),
+                          TextFieldItem(label: snapshot.data!["results"]["currencies"]["USD"]["name"], prefix: "U\$\$ ", controller: dolarController, onChanged: _dolarChanged),
 
                           const Divider(),
-                          TextFieldItem(label: "Euros", prefix: "€\$\$ ", controller: euroController, onChanged: _euroChanged),
+                          TextFieldItem(label: snapshot.data!["results"]["currencies"]["EUR"]["name"], prefix: "€\$\$ ", controller: euroController, onChanged: _euroChanged),
 
                           const Divider(),
-                          TextFieldItem(label: "Libras", prefix: "£\$\$ ", controller: libraController, onChanged: _libraChanged),
+                          TextFieldItem(label: snapshot.data!["results"]["currencies"]["GBP"]["name"], prefix: "£\$\$ ", controller: libraController, onChanged: _libraChanged),
 
                         ], //<Widget>[]
                       ), //Column
