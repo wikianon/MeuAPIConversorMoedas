@@ -31,7 +31,7 @@ class ConversorMoedas extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const Home(),
+      home: const ConversorMoedasHome(),
       theme: ThemeData(
           hintColor: Colors.amber,
           primaryColor: Colors.white,
@@ -63,14 +63,14 @@ Future<Map> getData() async {
   //print(jsonDecode(response.body)["results"]["currencies"]["USD"]["buy"]);
 }
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class ConversorMoedasHome extends StatefulWidget {
+  const ConversorMoedasHome({super.key});
 
   @override
-  _HomeState createState() => _HomeState();
+  _ConversorMoedasHomeState createState() => _ConversorMoedasHomeState();
 }
 
-class _HomeState extends State<Home> {
+class _ConversorMoedasHomeState extends State<ConversorMoedasHome> {
   final realController = TextEditingController();
   final dolarController = TextEditingController();
   final euroController = TextEditingController();
