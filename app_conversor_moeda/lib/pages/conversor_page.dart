@@ -39,11 +39,14 @@ class ConversorMoedasHome extends StatefulWidget {
 }
 
 class _ConversorMoedasHomeState extends State<ConversorMoedasHome> {
+
+  //pegando os dados digitados pelo usuario
   final realController = TextEditingController();
   final dolarController = TextEditingController();
   final euroController = TextEditingController();
   final libraController = TextEditingController();
 
+  //variaveis para converter os valores
   late double dolar;
   late double euro;
   late double libra;
@@ -95,6 +98,7 @@ class _ConversorMoedasHomeState extends State<ConversorMoedasHome> {
     libraController.text = (euro * euro / libra).toStringAsFixed(2);
   }
 
+  //convert libra esterlina
   void _libraChanged(String text){
     if(text.isEmpty){
       _clearAll();
@@ -139,6 +143,7 @@ class _ConversorMoedasHomeState extends State<ConversorMoedasHome> {
                   } 
                   else
                   {
+                    //buy valor de compra das moedas
                     dolar = snapshot.data!["results"]["currencies"]["USD"]["buy"];
                     euro = snapshot.data!["results"]["currencies"]["EUR"]["buy"];
                     libra = snapshot.data!["results"]["currencies"]["GBP"]["buy"];
