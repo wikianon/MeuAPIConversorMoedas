@@ -156,17 +156,17 @@ class _ConversorMoedasHomeState extends State<ConversorMoedasHome> {
                             height: 20,
                           ),
 
-                          TextFieldItem(label: "Reais", prefix: "R\$ ", ctrl: realController, func: _realChanged),
+                          TextFieldItem(label: "Reais", prefix: "R\$ ", controller: realController, onChanged: _realChanged),
 
                           //Separando os campos com o Widget Divider
                           const Divider(),
-                          TextFieldItem(label: "Dólares", prefix: "U\$\$ ", ctrl: dolarController, func: _dolarChanged),
+                          TextFieldItem(label: "Dólares", prefix: "U\$\$ ", controller: dolarController, onChanged: _dolarChanged),
 
                           const Divider(),
-                          TextFieldItem(label: "Euros", prefix: "€\$\$ ", ctrl: euroController, func: _euroChanged),
+                          TextFieldItem(label: "Euros", prefix: "€\$\$ ", controller: euroController, onChanged: _euroChanged),
 
                           const Divider(),
-                          TextFieldItem(label: "Libras", prefix: "£\$\$ ", ctrl: libraController, func: _libraChanged),
+                          TextFieldItem(label: "Libras", prefix: "£\$\$ ", controller: libraController, onChanged: _libraChanged),
 
                         ], //<Widget>[]
                       ), //Column
