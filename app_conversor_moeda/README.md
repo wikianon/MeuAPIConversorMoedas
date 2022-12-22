@@ -14,3 +14,7 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+- [Api: api de valores das moedas](https://economia.awesomeapi.com.br/json/all)
+- [Hg-Brasil: site para logar e criar as chaves](https://hgbrasil.com/status/finance)
+- [jsonEditor: Json editor online](https://jsoneditoronline.org/)
